@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'gradlePadrao'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+sourceSets{
+    main{
+        java{
+            srcDirs 'src/main'
+        }
+    }
+    test{
+        java{
+            srcDirs 'src/test'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.google.guava:guava:23.0'
+    testCompileOnly 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+}
+
+test{
+    useJUnitPlatform()
+}
